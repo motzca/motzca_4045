@@ -2,25 +2,16 @@ package com.plantplace.service;
 
 import com.plantplace.dto.SpecimenDTO;
 
-/**
- * CRUD operations for specimens
- * @author Administrator
- *
- */
-
 public interface ISpecimenService {
 
-	/**
-	 * Get specimens from persistence layer
-	 * @param id
-	 * @return
+	/* (non-Javadoc)
+	 * @see com.plantplaces.service.ISpecimentService#fetchById(int)
 	 */
 	SpecimenDTO fetchById(int id);
-	
-/**
- * Persist the given DTO
- * @param specimenDTO
- */
+
+	/* (non-Javadoc)
+	 * @see com.plantplaces.service.ISpecimentService#fetchById(int)
+	 */
 	void save(SpecimenDTO specimenDTO);
 
 }
