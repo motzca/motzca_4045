@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.plantplace.dto.SpecimenDTO;
 import com.plantplace.service.ISpecimenService;
@@ -29,8 +30,13 @@ public class PlantPlacesController {
 	}
 	
 	@RequestMapping(value="/start", method=RequestMethod.GET, params={"loyalty=silver"})
-	public String readSilver() {
-		return "start";
+	public ModelAndView readSilver() {
+		SpecimenDTO specimenDTO = specimenServiceStub.fetchById(43);
+		specimenDTO.setSpecimentId(83);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("start");
+		modelAndView.addObject("specimenDTO", specimenDTO);
+		return modelAndView;
 	}
 	
 	
