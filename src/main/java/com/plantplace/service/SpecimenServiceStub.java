@@ -1,15 +1,13 @@
 package com.plantplace.service;
 
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.plantplace.dto.SpecimenDTO;
 
 @Component
 public class SpecimenServiceStub implements ISpecimenService {
 	
-	/* (non-Javadoc)
-	 * @see com.plantplaces.service.ISpecimentService#fetchById(int)
-	 */
 	@Override
 	public SpecimenDTO fetchById(int id) {
 		SpecimenDTO specimenDTO = new SpecimenDTO();
@@ -20,9 +18,6 @@ public class SpecimenServiceStub implements ISpecimenService {
 		return specimenDTO;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.plantplaces.service.ISpecimentService#fetchById(int)
-	 */
 	@Override
 	public void save(SpecimenDTO specimenDTO) {
 		
